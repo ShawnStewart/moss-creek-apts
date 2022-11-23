@@ -1,0 +1,23 @@
+---
+import type { AstroBuiltinAttributes } from 'astro';
+
+export interface Props {
+    children: any;
+    class: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<div class={`clickable-card${className && ` ${className}`}`}>
+    <slot />
+</div>
+<script>
+    const cards = document.querySelectorAll('.clickable-card');
+    cards.forEach(card => {
+        card?.addEventListener('click', () => {
+            const action = card.querySelector<HTMLAnchorElement | HTMLButtonElement>('a, button');
+            action?.click();
+        });
+    });
+</script>
