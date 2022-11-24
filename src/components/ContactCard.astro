@@ -9,7 +9,7 @@ export interface Props {
 const { href, title, body } = Astro.props;
 ---
 
-<ClickableCard class="card bg-base-100 shadow-xl p-4">
-    <h2 class="card-title">{title}</h2>
+<ClickableCard class="card bg-base-100 shadow-xl p-4 mb-4">
+    <h3 class="card-title">{title}</h3>
     <slot />
 </ClickableCard>

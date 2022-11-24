@@ -1,25 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import ClickableCard from '../components/ClickableCard.astro';
-import ContactCard from '../components/ContactCard.astro';
+import ContactSection from '../sections/ContactSection.astro';
+
+const TITLE = 'Contact Us';
 ---
 
-<Layout title="Contact Us">
-    <main class="p-4">
-        <h1>Contact Us</h1>
-
-        <ContactCard title="Call Now !">
-            <a href="tel:636-290-1145" class="card-actions">636-290-1145</a>
-        </ContactCard>
-    </main>
+<Layout title={TITLE}>
+    <ContactSection hideSeparator />
 </Layout>
-<script>
-    const cards = document.querySelectorAll('.clickable-card');
-
-    cards.forEach(card => {
-        card?.addEventListener('click', () => {
-            const action = card.querySelector<HTMLAnchorElement | HTMLButtonElement>('a, button');
-            action?.click();
-        });
-    });
-</script>

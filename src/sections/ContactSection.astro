@@ -1,0 +1,70 @@
+---
+import ContactCard from '../components/ContactCard.astro';
+import PageSection from '../layouts/PageSection.astro';
+
+export interface Props {
+    hideSeparator?: boolean;
+}
+
+const { hideSeparator = false } = Astro.props;
+---
+
+<PageSection title="Contact Us" hideSeparator={hideSeparator}>
+    <ContactCard title="Call Now">
+        <a href="tel:555-555-5555" class="underline text-blue-600 hover:text-blue-800 visited:text-purple-600"
+            >555-555-5555</a
+        >
+    </ContactCard>
+
+    <ContactCard title="Address">
+        <address class="my-2">
+            <div>1626 University Avenue</div>
+            <div>USA</div>
+            <div>Columbia, MO 65201</div>
+        </address>
+        <div class="card-actions">
+            <a href="" class="btn btn-accent btn-sm">Get Directions</a>
+        </div>
+    </ContactCard>
+
+    <ContactCard title="Business Hours">
+        <table id="business-hours-table" class="table table-compact">
+            <tbody>
+                <tr>
+                    <td>Mon:</td>
+                    <td>8:00 AM - 5:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Tue:</td>
+                    <td>8:00 AM - 5:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Wed:</td>
+                    <td>8:00 AM - 5:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Thu:</td>
+                    <td>8:00 AM - 5:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Fri:</td>
+                    <td>8:00 AM - 5:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Sat:</td>
+                    <td>10:00 AM - 12:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Sun:</td>
+                    <td>10:00 AM - 12:00 PM</td>
+                </tr>
+            </tbody>
+        </table>
+    </ContactCard>
+</PageSection>
+<script>
+    const tableRows = document.querySelectorAll('#business-hours-table > tbody > tr');
+    const day = new Date().getDay() + 6;
+    console.log('here', day);
+    tableRows[day % 7]?.classList.add('active');
+</script>

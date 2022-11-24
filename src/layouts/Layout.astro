@@ -17,9 +17,11 @@ const { title } = Astro.props;
         <meta name="generator" content={Astro.generator} />
         <title>Moss Creek Apartments{title && ` | ${title}`}</title>
     </head>
-    <body>
+    <body class="bg-gray-100">
         <Header />
-        <slot />
+        <main>
+            <slot />
+        </main>
     </body>
 </html>
 <style is:global>
