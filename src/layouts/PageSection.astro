@@ -2,14 +2,19 @@
 export interface Props {
     children: any;
     hideSeparator?: boolean;
+    id?: string;
+    invert?: boolean;
     title: string;
 }
 
-const { hideSeparator = false, title } = Astro.props;
+const { hideSeparator = false, id, invert, title } = Astro.props;
+
+let styles = 'p-4';
+if (invert) styles += ` bg-base-300`;
 ---
 
-<section class="p-4">
-    {!hideSeparator && <hr class="max-w-[5rem] mx-auto my-4 border-black" />}
+<section id={id || title} class={styles}>
+    {!hideSeparator && <hr class="max-w-[5rem] mx-auto my-4 border-[1px] border-black" />}
     <h2 class="text-2xl text-center font-medium uppercase mb-12">
         {title}
     </h2>

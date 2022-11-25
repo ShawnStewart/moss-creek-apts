@@ -1,82 +1,39 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import ContactSection from '../sections/ContactSection.astro';
+import PageSection from '../layouts/PageSection.astro';
 ---
 
 <Layout>
-    <main>
-        <h1>Welcome to <span class="text-gradient">Astro</span></h1>
-        <p class="instructions">
-            To get started, open the directory <code>src/pages</code> in your project.<br />
-            <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-        </p>
-        <Card href="./contact" title="Example Homepage" body="Checkout the homepage." class="mb-4 bg-accent" />
-        <ul role="list" class="link-card-grid">
-            <Card
-                href="https://docs.astro.build/"
-                title="Documentation"
-                body="Learn how Astro works and explore the official API docs."
-            />
-            <Card
-                href="https://astro.build/integrations/"
-                title="Integrations"
-                body="Supercharge your project with new frameworks and libraries."
-            />
-            <Card
-                href="https://astro.build/themes/"
-                title="Themes"
-                body="Explore a galaxy of community-built starter themes."
-            />
-            <Card
-                href="https://astro.build/chat/"
-                title="Community"
-                body="Come say hi to our amazing Discord community. ❤️"
-            />
+    <section class="text-center">
+        <img src="../../public/assets/header.png" class="mx-auto" />
+        <div class="p-4">
+            <h1 class="text-4xl font-bold text-primary">Moss Creek Apartments</h1>
+            <p class="my-4">Amazingly Unique Apartment Complex in <br />Columbia, MO</p>
+            <a href="#contact-section" class="btn btn-accent rounded">Get Quote</a>
+        </div>
+    </section>
+    <PageSection title="East Campus Student Housing at Mizzou">
+        <ul class="list-disc ml-4">
+            <li>Refurbished & ready to rent.</li>
+            <li>
+                Clean, safe, quiet apartment complex within close proximity to MU's campus; offering 2 and 4 bedroom
+                garden style floorplans with exceptional balcony views of the Moss Creek and surrounding woods.
+            </li>
+            <li>Rent is very reasonable. Utilities are all electric.</li>
+            <li>Spacious/open floor plan with large bedrooms and clothes closets!</li>
+            <li>Park your car near your front door at no extra cost.</li>
+            <li>
+                Walk to campus, downtown, Stephens Lake and Park, MKT Trail, Starbucks, Booches, Shakespere's Pizza,
+                bars, grocery; everything you need is close by.
+            </li>
+            <li>Owner managed and maintained.</li>
+            <li>Student Friendly Neighborhood</li>
+            <li>Lease early while there is availability to rent close to your friends.</li>
+            <li>Hold your apartment for next Fall with an approved application and deposit.</li>
+            <li>Check for availability on short-term leases.</li>
+            <li>Washer/Dryer and furniture rental available at reasonable rates.</li>
         </ul>
-    </main>
+    </PageSection>
+    <ContactSection />
 </Layout>
-
-<style>
-    main {
-        margin: auto;
-        padding: 1.5rem;
-        max-width: 60ch;
-    }
-    h1 {
-        font-size: 3rem;
-        font-weight: 800;
-        margin: 0;
-    }
-    .text-gradient {
-        background-image: var(--accent-gradient);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-size: 400%;
-        background-position: 0%;
-    }
-    .instructions {
-        line-height: 1.6;
-        margin: 1rem 0;
-        border: 1px solid rgba(var(--accent), 25%);
-        background-color: white;
-        padding: 1rem;
-        border-radius: 0.4rem;
-    }
-    .instructions code {
-        font-size: 0.875em;
-        font-weight: bold;
-        background: rgba(var(--accent), 12%);
-        color: rgb(var(--accent));
-        border-radius: 4px;
-        padding: 0.3em 0.45em;
-    }
-    .instructions strong {
-        color: rgb(var(--accent));
-    }
-    .link-card-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-        gap: 1rem;
-        padding: 0;
-    }
-</style>

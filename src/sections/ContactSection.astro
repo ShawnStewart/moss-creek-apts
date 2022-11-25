@@ -9,7 +9,7 @@ export interface Props {
 const { hideSeparator = false } = Astro.props;
 ---
 
-<PageSection title="Contact Us" hideSeparator={hideSeparator}>
+<PageSection id="contact-section" title="Contact Us" hideSeparator={hideSeparator} invert>
     <ContactCard title="Call Now">
         <a href="tel:555-555-5555" class="underline text-blue-600 hover:text-blue-800 visited:text-purple-600"
             >555-555-5555</a
