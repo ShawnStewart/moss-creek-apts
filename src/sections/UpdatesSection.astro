@@ -1,11 +1,15 @@
 ---
 import PageSection from '../layouts/PageSection.astro';
+
+import img1 from '../images/Post1.jpg';
+import img2 from '../images/Post2.png';
+import img3 from '../images/Post3.png';
 ---
 
 <PageSection title="Updates">
     <article class="card card-compact bg-white shadow-xl mb-8">
         <figure class="aspect-square">
-            <img src="../../public/assets/Post1.jpg" class="w-full" />
+            <img src={img1} class="w-full" />
         </figure>
         <div class="card-body">
             <h3 class="card-title flex justify-between">Oct. 24, 2022</h3>
@@ -36,7 +40,7 @@ import PageSection from '../layouts/PageSection.astro';
 
     <article class="card card-compact bg-white shadow-xl mb-8">
         <figure class="aspect-square">
-            <img src="../../public/assets/Post2.png" class="w-full" />
+            <img src={img2} class="w-full" />
         </figure>
         <div class="card-body">
             <h3 class="card-title flex justify-between">Jul. 3, 2022</h3>
@@ -54,7 +58,7 @@ import PageSection from '../layouts/PageSection.astro';
 
     <article class="card card-compact bg-white shadow-xl mb-8">
         <figure class="aspect-square">
-            <img src="../../public/assets/Post3.png" class="w-full" />
+            <img src={img3} class="w-full" />
         </figure>
         <div class="card-body">
             <h3 class="card-title flex justify-between">Jul. 3, 2022</h3>

@@ -5,11 +5,13 @@ import PageSection from '../layouts/PageSection.astro';
 import ContactSection from '../sections/ContactSection.astro';
 import ReviewsSection from '../sections/ReviewsSection.astro';
 import UpdatesSection from '../sections/UpdatesSection.astro';
+
+import headerImg from '../images/header.png';
 ---
 
 <Layout>
     <section class="max-w-3xl mx-auto text-center">
-        <img src="../../public/assets/header.png" class="mx-auto" />
+        <img src={headerImg} class="mx-auto" />
         <div class="p-4">
             <h1 class="text-4xl font-bold text-primary">Moss Creek Apartments</h1>
             <p class="my-4">Amazingly Unique Apartment Complex in <br />Columbia, MO</p>
