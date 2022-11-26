@@ -1,0 +1,19 @@
+---
+export interface Props {
+    message: string;
+    name: string;
+}
+
+const { message, name } = Astro.props;
+---
+
+<article class="py-4 border-b-2 border-base-200 last-of-type:border-b-0">
+    <h4 class="flex justify-between flex-wrap mb-1">
+        <span class="w-full mb-1 text-neutral font-semibold">{name}</span>
+        <span class="">★★★★✩ 4.0</span>
+        <span class="text-sm font-semibold text-gray-700">6 months ago</span>
+    </h4>
+    <p>
+        {message}
+    </p>
+</article>

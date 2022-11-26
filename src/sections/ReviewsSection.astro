@@ -1,0 +1,25 @@
+---
+import Review from '../components/Review.astro';
+import PageSection from '../layouts/PageSection.astro';
+
+import reviews from '../__fixtures__/reviews.data.json';
+---
+
+<PageSection title="Testimonials">
+    <h3 class="text-2xl flex flex-col items-center mb-8">
+        <span>4.0</span>
+        <span>★★★★✩</span>
+        <span class="text-sm text-gray-700">based on 123 reviews</span>
+    </h3>
+
+    {reviews.map(({ message, name }) => <Review {...{ message, name }} />)}
+
+    <div class="my-4 text-center">
+        <a
+            href="https://search.google.com/local/reviews?placeid=ChIJk9uYAu233IcRT6Q-eAD6FDQ"
+            class="btn btn-primary btn-sm btn-outline"
+        >
+            Read More</a
+        >
+    </div>
+</PageSection>

@@ -9,13 +9,18 @@ export interface Props {
 
 const { hideSeparator = false, id, invert, title } = Astro.props;
 
-let styles = 'p-4';
-if (invert) styles += ` bg-base-300`;
+let containerStyles = 'p-4';
+let headingStyles = 'text-2xl text-center font-medium uppercase mb-12';
+
+if (invert) {
+    containerStyles += ' bg-primary';
+    headingStyles += ' text-primary-content';
+}
 ---
 
-<section id={id || title} class={styles}>
+<section id={id || title} class={containerStyles}>
     {!hideSeparator && <hr class="max-w-[5rem] mx-auto my-4 border-[1px] border-black" />}
-    <h2 class="text-2xl text-center font-medium uppercase mb-12">
+    <h2 class={headingStyles}>
         {title}
     </h2>
     <slot />
