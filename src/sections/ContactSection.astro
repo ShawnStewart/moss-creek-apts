@@ -65,6 +65,5 @@ const { hideSeparator = false } = Astro.props;
 <script>
     const tableRows = document.querySelectorAll('#business-hours-table > tbody > tr');
     const day = new Date().getDay() + 6;
-    console.log('here', day);
     tableRows[day % 7]?.classList.add('active');
 </script>

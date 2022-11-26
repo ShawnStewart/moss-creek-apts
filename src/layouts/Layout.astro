@@ -1,5 +1,6 @@
 ---
 import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 
 export interface Props {
     title?: string;
@@ -12,7 +13,7 @@ if (titleProp) title += ` | ${titleProp}`;
 ---
 
 <!DOCTYPE html>
-<html lang="en" data-theme="cupcake">
+<html lang="en" data-theme="garden">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
@@ -25,6 +26,7 @@ if (titleProp) title += ` | ${titleProp}`;
         <main>
             <slot />
         </main>
+        <Footer />
     </body>
 </html>
 <style is:global>
